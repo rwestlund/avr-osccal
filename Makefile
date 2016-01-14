@@ -6,11 +6,13 @@
 # edit these with your values
 MCU_TARGET = atmega328
 PROGRAMMER = avrisp2
-# frequency of the calibration clock provided by the programmer
+# frequency in Hz of the calibration clock provided by the programmer
+# should be accurate for any AVRISP mkII, but you can measure yours with a scope
 ISP_FREQ = 24592
-# MCU clock frequency
+# MCU clock frequency in Hz
 CLOCK_FREQ = 1000000
 
+# you probably don't need to change anything below here
 DEFINES = -DISP_FREQ=${ISP_FREQ} -DCLOCK_FREQ=${CLOCK_FREQ}
 CC = avr-gcc
 OBJCOPY = avr-objcopy
@@ -19,7 +21,6 @@ OBJDUMP = avr-objdump
 SIZE = avr-size
 
 CFLAGS = -Wall -Werror -std=c99 -pedantic -Os -mmcu=${MCU_TARGET} ${DEFINES}
-LDFLAGS = -Wl,-Map
 OBJCOPYFLAGS = -j .text -j .data -O ihex
 OBJDUMPFLAGS = -h -S
 

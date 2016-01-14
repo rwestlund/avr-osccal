@@ -12,7 +12,8 @@ voltage and temperature conditions.
 App Note [AVR053](http://www.atmel.com/images/doc2555.pdf) describes a protocol
 for doing this automatically with the ISP interface.  This is an implementation
 in C, for convenience and portability.  It may be used in conjunction with
-either `avrdude` or `atprogram` for the actual calibration.
+either `avrdude` or `atprogram` (part of Atmel Studio) for the actual
+calibration.
 
 For maximum portability, this implementation follows the recommendations of
 AVR053 in avoiding interrupts and using the 8-bit timer, which should allow it
@@ -20,7 +21,7 @@ to run on any AVR device.
 
 ## License
 
-This library is under the BSD-2-Clause license.
+This code is under the BSD-2-Clause license.
 
 ## Usage
 
